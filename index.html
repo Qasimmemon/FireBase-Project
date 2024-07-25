@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      
+      .buon {
+  color: #000000;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
+}
+
+.buon:active {
+  color: #666;
+  /* box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff; */
+}
+
+.buon:hover{
+  text-decoration: underline;
+  color: #585454;
+}
+      body  {
+        width: 100%;
+  height: 100%;
+  background-color: #111111;
+  background-image: linear-gradient(
+    32deg,
+    rgba(8, 8, 8, 0.74) 30px,
+    transparent
+  );
+  background-size: 60px 60px;
+  background-position: -5px -5px;
+}
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px ,2px);
+}
+    </style>
+  </head>
+  <body>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 text-white">
+      <div
+        class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4"
+      >
+        <a
+          href="https://flowbite.com"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img
+            src="image/download.png"
+            style="height: 50px;"
+         
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-gray-300"
+            style="color: rgb(99, 98, 98);"
+            >Foods Panda</span
+          >
+        </a>
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+          <a
+            href="tel:5541251234"
+            class="text-sm text-gray-500 dark:text-white hover:underline"
+            style="color: #000000;"
+            >03272562464</a
+          >
+          <a
+            href="auth/createAccount.html"
+            id="login_btn"
+            class="text-sm text-blue-600 dark:text-blue-500 hover:underline"
+            >Login</a
+          >
+         <button class="buon" style=" text-decoration: underline;"> <a
+            href="auth/createAccount.html"
+            
+            id="user_info"
+            class="text-sm text-blue-600 dark:text-blue-500 hover:underline"
+          ></a></button>
+          <a
+            href="createRecipe/index.html"
+            id="create_recipe_btn"
+            style="display: none"
+            class="text-sm text-blue-600 dark:text-blue-500 hover:underline"
+            ><button class="buon">Create Recipe</button></a
+          >
+
+<button class="Btn" id="logout_btn">
+  
+  <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+  
+  <div class="text" style="margin-top: -25px;">Logout</div>
+</button>
+
+        </div>
+      </div>
+    </nav>
+    <!-- <nav class="bg-gray-50 dark:bg-gray-700">
+      <div class="max-w-screen-xl px-4 py-3 mx-auto">
+        <div class="flex items-center">
+          <ul
+            class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm"
+          >
+            <li>
+              <a
+                href="#"
+                class="text-gray-900 dark:text-white hover:underline"
+                aria-current="page"
+                >All Foods</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-900 dark:text-white hover:underline"
+                >My Foods</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+    <div class="flex items-center justify-center w-full center my-3">
+      <input class="w-1/2 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" type="search" id="search-input"  placeholder="Search Title" />
+      
+  
+  <select id="priceSelect" class="border rounded p-3 text-lg ml-1 text-gray-900" >
+<option value="0-2000">Select price range</option>
+  <option value="0-500">$0 - $500</option>
+  <option value="500-800">$500 - $800</option>
+  <option value="800-1200">$800 - $1200</option>
+  <option value="1200-1500">$1200 - $1500</option>
+  <option value="1500-2000">$1500 - $2000</option>
+  </select>
+
+
+    </div>
+<div style="display: flex; justify-content: center;">
+    <div id="cards_container" style="display: grid;  grid-template-columns: repeat(2,1fr);  margin-top: 10px; gap: 10px;">
+      
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section class="text-whit body-font overflow-hidden">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+      <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="${image}">
+      <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        <h1 class="text-white text-3xl title-font font-medium mb-1">${foodName}</h1>
+        <div class="flex mb-4">
+          <span class="flex items-center">
+            
+            <span class="text-white ml-3">4 Reviews</span>
+          </span>
+          <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2">
+          
+          </span>
+        </div>
+        <div class="flex mt-6 text-white items-center pb-5 border-b-2 border-gray-100 mb-5">
+          <div class="flex">
+            Branch: "${foodLocation}"
+          </div>
+          <div class="flex ml-6 items-center">
+            
+            <div class="relative">
+              
+              <span class="absolute right-0 top-0 h-full w-10 text-center text-white-1000 pointer-events-none flex items-center justify-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <p class="text-white leading-relaxed">Added By ${addByEmail}.</p>
+        <div class="flex">
+          <span class="title-font font-medium text-2xl text-white">$${foodPrice}</span>
+          <button id="like-${food.id}" class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-white-1000 ml-4">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+            </svg>
+          </button>
+          <button id="dislike-${food.id}" class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-white-1000 ml-4">
+            <i class="fa-solid fa-thumbs-down"></i>
+          </button>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section> <br><br><br> -->
+
+
+
