@@ -83,6 +83,7 @@ function displayFoods(data) {
     deleteButton.addEventListener('click', async function () {
       try {
         await deleteDoc(doc(db, 'foods', id));
+        console.log(id)
         console.log('Document successfully deleted!');
         document.getElementById(`food-${id}`).remove();
       } catch (error) {
