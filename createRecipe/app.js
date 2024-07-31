@@ -11,6 +11,10 @@ import {
   
   const submit_food_form = document.getElementById("submit_food_form");
   const btncreate = document.getElementById('btncreate')
+  btncreate.addEventListener('click', function () {
+  
+  }
+  )
   submit_food_form.addEventListener("submit", (e) => {
     e.preventDefault();
     const obj = {
@@ -33,6 +37,7 @@ import {
         addDoc(foodCollection, obj).then(() => {
           console.log("Doc upload hogya");
           window.location.href = "/";
+
         });
       });
     });
